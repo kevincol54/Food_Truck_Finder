@@ -50,5 +50,6 @@ gem 'simple_form'
 gem 'jquery-ui-rails'
 gem 'twitter-bootstrap-rails'
 gem 'cancan'
+gem 'paperclip'
 
 

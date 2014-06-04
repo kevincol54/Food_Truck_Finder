@@ -15,3 +15,27 @@
 //= require jquery.ui.all
 //= require turbolinks
 //= require_tree .
+//= require bootstrap.min.js
+var when_page_is_ready = function(){
+
+  $("p.alert").fadeOut(2000)
+  $("p.notice").fadeOut(2000)
+
+  $("div.input.string.optional.user_company_name").hide();
+
+  $("select#user_user_type").on('change', function(){
+    
+    if ( $(this).val() == 'Company' ) {
+      $("div.input.string.optional.user_company_name").show();
+    }
+    else {
+      $("div.input.string.optional.user_company_name").hide();
+    } 
+  })
+}
+
+
+
+
+$(document).ready(when_page_is_ready);
+$(document).on("page:load", when_page_is_ready);
