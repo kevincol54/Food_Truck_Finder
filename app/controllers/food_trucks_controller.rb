@@ -1,4 +1,5 @@
 class FoodTrucksController < ApplicationController
+  before_action :authenticate_user!
   before_filter :find_company, only: [:new, :create, :show, :edit, :update, :destroy]
   before_filter :find_food_truck, only: [:show, :edit, :update, :destroy]
 
@@ -15,7 +16,7 @@ class FoodTrucksController < ApplicationController
     success = @food_truck.save
     if success == true
       flash[:notice] = "You entered an acceptable Food Truck"
-      redirect_to companies_path
+      redirect_to company_path(@company)  
     else
       flash[:error] = "Not an acceptable Food Truck"
       render :new
@@ -23,13 +24,14 @@ class FoodTrucksController < ApplicationController
   end
 
   def show
-    @food_truck = @company.food_trucks
   end
 
   def edit
   end
 
   def update
+    @food_truck.update_attributes food_truck_params
+    redirect_to company_food_truck_path(@company, @food_truck)
   end
 
   def destroy
@@ -46,6 +48,12 @@ class FoodTrucksController < ApplicationController
   end
 
   def food_truck_params
-    params.require(:food_truck).permit(:name, :description, :image, :company_id)
+    params.require(:food_truck).permit(:name,
+     :description,
+      :image,
+       :company_id,
+       :address,
+       :longitude,
+       :latitude)
   end
 end

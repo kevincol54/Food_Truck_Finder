@@ -54,5 +54,6 @@ gem 'paperclip'
 gem 'geocoder'
 gem 'mapbox-rails'
 gem 'gmaps4rails'
+gem 'twilio-ruby'
 
 

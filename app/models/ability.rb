@@ -4,10 +4,11 @@ class Ability
   def initialize(user)
 
     if user.user_type == "Company"
-        can :read, Company, :user_id => user.id
+        can :manage, Company, :user_id => user.id
+        can :manage, FoodTruck
     else
         can :read, Company
-        # can :read, Food Truck
+        can :read, FoodTruck
     end
     # Define abilities for the passed in user here. For example:
     #

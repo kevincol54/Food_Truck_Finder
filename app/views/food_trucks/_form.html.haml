@@ -1,5 +1,8 @@
 =simple_form_for [@company, @food_truck] do |f|
-  =f.input :name
-  =f.input :description
+  =f.input :name, placeholder: 'Name'
+  =f.input :description, placeholder: 'Description'
+  =f.input :address, placeholder: 'Street, City, State'
+  =f.input :longitude
+  =f.input :latitude
   =f.file_field :image
   =f.button :submit

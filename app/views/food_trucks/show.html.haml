@@ -11,12 +11,15 @@
     %a.navbar-brand{:href => "/companies"} Home
   %nav.collapse.navbar-collapse{:role => "navigation"}
     %ul.nav.navbar-nav
-      %li
-        =link_to "Edit Food Truck", edit_company_food_truck_path(@company, @food_truck)
-      %li
-        / =link_to "Edit Company Info", edit_company_path(@company)
-      %li
-        =link_to "Back", company_path(@company)
+      -if can? :manage, FoodTruck
+        %li
+          =link_to "Edit Food Truck", edit_company_food_truck_path(@company, @food_truck)
+      -if can? :manage, FoodTruck
+        %li
+          =link_to "Back", company_path(@company)
+      -else can? :read, FoodTruck
+        %li
+          =link_to "Back", food_trucks_path
       %li
         - if user_signed_in? 
           = link_to('Logout', destroy_user_session_path, :method => :delete)
@@ -31,25 +34,23 @@
             %button.btn.btn-default.pull-right{:type => "submit"}
               %i.glyphicon.glyphicon-search
             %input.form-control.pull-left{:placeholder => "Search", :type => "text"}
-/ .container
-/   .companyindex            
-/     -@food_truck.each do |food_truck|
-/       %br
-/       =food_truck.name
-/       %br
-/       =food_truck.description
+
 #map-canvas
 #main.container-fluid
   .row
     #left.col-xs-8
-      .panel.panel-default
+      .panel.panel-info
         .panel-heading
-          = "Frank's hot dog truck"
-      %p
-        this is where the awesome description of the food truck will live.
+          %h3 #{@food_truck.name}
+            
+          %h5 #{@food_truck.description}
+          .pheadleft
+            = "Now Serving Food!"   
+        / = image_tag foodtruck.image.url, style: "width: 150px; height: 150px"
+        / %h5 #{@food_truck.description}
       %hr
-        
+          
     .col-xs-4
       
-      %div{:style => "width: 400px;"}
-      #map{:style => "width: 400px; height: 400px;"}
+      / %div{:style => "width: 400px;"}
+      / #map{:style => "width: 400px; height: 400px;"}

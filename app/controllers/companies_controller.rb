@@ -1,9 +1,8 @@
 class CompaniesController < ApplicationController
-
+  before_action :authenticate_user!
   before_filter :find_company, only: [:show, :update, :edit, :destroy]
 
   def index
-    authorize! :read, Company
     @company = Company.all.accessible_by(current_ability, :read)
   end
 

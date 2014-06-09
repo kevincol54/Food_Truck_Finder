@@ -15,7 +15,6 @@
  *= require_tree .
  *= require_self
  *= require jquery.ui.all
- *= require mapbox
  */
 
 
@@ -192,7 +191,7 @@ a,a:hover {
 }
 
 .navbar-bright {
-  background-color:#CC0000;
+  background-color:#000099;
   color:#CC0000;
   margin-bottom: 0;
   border-width: 0;

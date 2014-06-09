@@ -31,10 +31,25 @@
             %button.btn.btn-default.pull-right{:type => "submit"}
               %i.glyphicon.glyphicon-search
             %input.form-control.pull-left{:placeholder => "Search", :type => "text"}
-- @food_truck.each do |foodtruck|
-  %br
-  =link_to foodtruck.name, company_food_truck_path(@company, foodtruck)
-  %br
-  =foodtruck.description
-  %br
-  =image_tag foodtruck.image.url
+/ - @food_truck.each do |foodtruck|
+/   %br
+/   =link_to foodtruck.name, company_food_truck_path(@company, foodtruck)
+/   %br
+/   =foodtruck.description
+/   %br
+/   =image_tag foodtruck.image.url
+#map-canvas
+#main.container-fluid
+  .row
+    #left.col-xs-8
+      - @food_truck.each do |foodtruck|
+        .panel.panel-info
+          .panel-heading
+            = link_to foodtruck.name, company_food_truck_path(@company, foodtruck)
+            .pheadleft
+              = "Now Serving Food!"   
+          = image_tag foodtruck.image.url, style: "width: 150px; height: 150px"
+          = foodtruck.description
+        %hr
+          
+    .col-xs-4
