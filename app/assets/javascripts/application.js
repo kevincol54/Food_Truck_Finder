@@ -16,24 +16,45 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap.min.js
+//= require mapbox.js
+//= require underscore.min.js
+//= require gmaps/google
 var when_page_is_ready = function(){
 
   $("p.alert").fadeOut(2000)
   $("p.notice").fadeOut(2000)
 
-  $("div.input.string.optional.user_company_name").hide();
+  // $("div.input.string.optional.user_company_name").hide();
 
-  $("select#user_user_type").on('change', function(){
+  // $("select#user_user_type").on('change', function(){
     
-    if ( $(this).val() == 'Company' ) {
-      $("div.input.string.optional.user_company_name").show();
-    }
-    else {
-      $("div.input.string.optional.user_company_name").hide();
-    } 
-  })
+  //   if ( $(this).val() == 'Company' ) {
+  //     $("div.input.string.optional.user_company_name").show();
+  //   }
+  //   else {
+  //     $("div.input.string.optional.user_company_name").hide();
+  //   } 
+  // })
 }
 
+
+handler = Gmaps.build('Google');
+handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+  markers = handler.addMarkers([
+    {
+      "lat": 0,
+      "lng": 0,
+      "picture": {
+        "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
+        "width":  36,
+        "height": 36
+      },
+      "infowindow": "hello!"
+    }
+  ]);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+});
 
 
 

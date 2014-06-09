@@ -6,8 +6,6 @@
       = f.input :name, required: true
       = f.input :phone_number, required: true
       = f.select :user_type, options_for_select(User::USER_TYPE, @user.user_type), include_blank: "-- Select --"
-      = f.file_field :image
-      = f.input :company_name
       = f.input :email, required: true, autofocus: true
       = f.input :password, required: true
       = f.input :password_confirmation, required: true

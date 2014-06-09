@@ -1,0 +1,11 @@
+=simple_form_for @company do |f|
+  =f.input :name, label: "Company Name"
+  %br
+  %h5 Tell Us About You Company
+  =f.input :description
+  %br
+  %h5 Upload Company Logo 
+  =f.file_field :image
+  %br
+  =f.button :submit
+  

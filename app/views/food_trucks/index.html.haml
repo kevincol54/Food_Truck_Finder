@@ -8,15 +8,15 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.navbar-brand{:href => "/"} Home
+      %a.navbar-brand{:href => "/food_trucks"} Home
     %nav.collapse.navbar-collapse{:role => "navigation"}
       %ul.nav.navbar-nav
         %li
-          =link_to "New Company", new_company_path
+          / =link_to "New Company", new_company_path
         %li
-          =link_to "Edit Company Info", edit_company_path(@company)
+          / =link_to "Edit Company Info", edit_company_path(@company)
         %li
-          %a{:href => "#"} Category
+          / =link_to "Cancel", root_path
         %li
           - if user_signed_in? 
             = link_to('Logout', destroy_user_session_path, :method => :delete)
@@ -31,3 +31,24 @@
               %button.btn.btn-default.pull-right{:type => "submit"}
                 %i.glyphicon.glyphicon-search
               %input.form-control.pull-left{:placeholder => "Search", :type => "text"}
+
+/   =image_tag foodtruck.image.url
+
+#map-canvas
+#main.container-fluid
+  .row
+    #left.col-xs-8
+      - @food_truck.each do |foodtruck|
+        .panel.panel-danger
+          .panel-heading
+            = link_to foodtruck.name
+            .pheadleft
+              = "Now Serving Food!"   
+          = image_tag foodtruck.image.url, style: "width: 150px; height: 150px"
+          = foodtruck.description
+        %hr
+          
+    .col-xs-4
+      
+      %div{:style => "width: 400px;"}
+      #map{:style => "width: 400px; height: 400px;"}

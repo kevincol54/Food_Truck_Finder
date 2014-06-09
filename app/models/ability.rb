@@ -2,6 +2,13 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+
+    if user.user_type == "Company"
+        can :read, Company, :user_id => user.id
+    else
+        can :read, Company
+        # can :read, Food Truck
+    end
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

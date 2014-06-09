@@ -15,15 +15,63 @@
  *= require_tree .
  *= require_self
  *= require jquery.ui.all
+ *= require mapbox
  */
 
 
 /* override bootstrap styles */
 @import url('http://fonts.googleapis.com/css?family=Oswald:300,400:latin,latin-ext');
 
+
+html,body{
+    height:100%;
+}
+
+body{
+    padding-top:50px; /*padding for navbar*/
+}
+
+/*.companyimage{
+  border: 1px solid black;
+}*/
+
+.pheadleft{
+  position:relative;
+  
+}
+
+.companyindex{
+  background-color: #E6E6E6;
+}
+
+#main, #main>.row {
+  height:100%;
+}
+
+#main>.row {
+    overflow-y:scroll;
+}
+
+#left {
+  height:100%;
+}
+
+#map-canvas {
+  width:33.3333%;
+    height:calc(100% - 0);
+    position:absolute;
+    right:16px;
+    top:50px;
+    bottom:0;
+    overflow:hidden;
+}
+
+
 .navbar-form input, .form-inline input {
   width:auto;
 }
+
+
 
 .signupbox{
   /*border: 1px solid black;*/
@@ -220,10 +268,56 @@ a,a:hover {
   color:#fff;
 }
     
-.btn-twitter {background-color:#4099FF;color:#fff;}
-.btn-facebook {background-color:#3B5998;color:#fff;}
-.btn-google-plus {background-color:#d34836;color:#fff;}
+html,body{
+    height:100%;
+}
 
-.btn-twitter:hover {background-color:#3088FF;color:#62BBFF;}
-.btn-facebook:hover {background-color:#2A4998;color:#4C6BBA;}
-.btn-google-plus:hover {background-color:#C23836;color:#E45A58;}
+body{
+    padding-top:50px; /*padding for navbar*/
+}
+
+.navbar-custom .icon-bar {
+  background-color:#fff;
+}
+
+.navbar-custom {
+  background-color: #168ccc;
+    color:#fff;
+}
+
+.navbar-custom li>a:hover,.navbar-custom li>a:focus {
+  background-color:#49bfff;
+}
+
+.navbar-custom a{
+    color:#fefefe;
+}
+
+.navbar-custom .form-control:focus {
+  border-color: #49bfff;
+  outline: 0;
+  -webkit-box-shadow: inset 0 0 0;
+  box-shadow: inset 0 0 0;
+}
+
+#main, #main>.row {
+  height:100%;
+}
+
+#main>.row {
+    overflow-y:scroll;
+}
+
+#left {
+  height:100%;
+}
+
+#map-canvas {
+  width:33.3333%;
+    height:calc(100% - 0);
+    position:absolute;
+    right:16px;
+    top:50px;
+    bottom:0;
+    overflow:hidden;
+}

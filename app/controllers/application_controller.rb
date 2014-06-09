@@ -10,4 +10,16 @@ class ApplicationController < ActionController::Base
 
     devise_parameter_sanitizer.for(:account_update) {|u| u.permit(:email, :password, :password_confirmation, :current_password, :name)}
   end
+
+  def after_sign_in_path_for(resource)
+    if @user.user_type == 'Company'
+      companies_path
+    else
+      food_trucks_path
+    end
+  end
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, :alert => exception.message
+  end
 end
