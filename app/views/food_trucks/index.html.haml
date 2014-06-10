@@ -32,18 +32,16 @@
                 %i.glyphicon.glyphicon-search
               %input.form-control.pull-left{:placeholder => "Search", :type => "text"}
 
-/   =image_tag foodtruck.image.url
-
+%input{type:'hidden', value: @geojson.to_json, class: 'geojson'}
 #map-canvas
 #main.container-fluid
   .row
     #left.col-xs-8
+      
       - @food_truck.each do |foodtruck|
-        .panel.panel-info
+        .panel.panel-info.show
           .panel-heading
             = link_to foodtruck.name, company_food_truck_path(foodtruck.company, foodtruck)
-            
-            / ..._path(@food_truck.company, @food_truck)
             .pheadleft
               = "Now Serving Food!"   
           = image_tag foodtruck.image.url, style: "width: 150px; height: 150px"
@@ -52,5 +50,4 @@
           
     .col-xs-4
       
-      %div{:style => "width: 400px;"}
-      #map{:style => "width: 400px; height: 700px;"}
+     

@@ -32,11 +32,12 @@
                 %i.glyphicon.glyphicon-search
               %input.form-control.pull-left{:placeholder => "Search", :type => "text"}
 .container
-  .companyindex
+  .row
     -@company.each do |company|
-      %br
-      = link_to company.name, company_path(company)
-      %br
-      .companyimage
-        =image_tag company.image.url
+      .panel.panel-success
+        .panel-heading
+          .companyname
+            = link_to company.name, company_path(company)
+        =image_tag company.image.url, style: "width: 150px; height: 150px"
+        = company.description
  

@@ -35,22 +35,22 @@
               %i.glyphicon.glyphicon-search
             %input.form-control.pull-left{:placeholder => "Search", :type => "text"}
 
-#map-canvas
-#main.container-fluid
+
+.container
   .row
-    #left.col-xs-8
+    .col-md-4
+    .col-md-4
       .panel.panel-info
         .panel-heading
           %h3 #{@food_truck.name}
             
           %h5 #{@food_truck.description}
           .pheadleft
-            = "Now Serving Food!"   
-        / = image_tag foodtruck.image.url, style: "width: 150px; height: 150px"
-        / %h5 #{@food_truck.description}
-      %hr
-          
-    .col-xs-4
+            = "Now Serving Food!"
+      .imageborder
+        = image_tag @food_truck.image.url, style: "width: 360px; height: 360px"
+    .col-md-4
+
       
-      / %div{:style => "width: 400px;"}
-      / #map{:style => "width: 400px; height: 400px;"}
+    
+    

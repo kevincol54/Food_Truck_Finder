@@ -5,6 +5,23 @@ class FoodTrucksController < ApplicationController
 
   def index
     @food_truck = FoodTruck.all
+    @geojson = Array.new
+
+    @food_truck.each do |food_truck|
+      @geojson << {
+        location: 
+         [food_truck.longitude, food_truck.latitude], 
+        properties: {
+          name: food_truck.name,
+          address: food_truck.address,
+        }
+      }
+
+    end
+    respond_to do |format|
+      format.html
+      format.json { render json: @geojson }
+    end
   end
 
   def new

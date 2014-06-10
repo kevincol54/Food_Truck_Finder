@@ -14,10 +14,10 @@
 //= require jquery_ujs
 //= require jquery.ui.all
 //= require turbolinks
-//= require_tree .
 //= require bootstrap.min.js
 //= require underscore.min.js
 //= require gmaps/google
+//= require_tree .
 var when_page_is_ready = function(){
 
   $("p.alert").fadeOut(2000)
@@ -35,65 +35,79 @@ var when_page_is_ready = function(){
   //   } 
   // })
 
-  function getLocation(){
+  var geojson = $(".geojson").val()
+  var geo = $.parseJSON(geojson)
+  console.log(geo)
 
+  function getLocation(){
+    navigator.geolocation.getCurrentPosition(success, error,options);
     {
       if (navigator.geolocation)
-
       {
-
         var options = {
-            enableHighAccuracy: true,
-            timeout: 5000,
-            maximumAge: 0
+          enableHighAccuracy: true,
+          timeout: 5000,
+          maximumAge: 0
         };
-
-        navigator.geolocation.getCurrentPosition( success, error,options);
+        // navigator.geolocation.getCurrentPosition(success, error,options);
       }
-
       else
-
-      { x.innerHTML= "Geolocation is not supported by this browser."; }
+      { x.innerHTML = "Geolocation is not supported by this browser."; }
     }
   }
 
   function error(e) {
-
-  console.log("error code:" + e.code + 'message: ' + e.message );
-
+    console.log("error code:" + e.code + 'message: ' + e.message );
   }
 
   function success(position) {
-    var  lat  = position.coords.latitude;
-    var  lng =  position.coords.longitude;
+    var lat = position.coords.latitude;
+    var lng =  position.coords.longitude;
 
-    var  myLocation =   new google.maps.LatLng(lat, lng);
+    var myLocation = new google.maps.LatLng(lat, lng);
+    console.log("FUCK:", myLocation )
 
     var mapOptions = {
-         center: new google.maps.LatLng(myLocation.lat(),myLocation.lng()),
-        zoom: 13,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+      center: new google.maps.LatLng(myLocation.lat(),myLocation.lng()),
+      zoom: 13,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
-    var map = new google.maps.Map(document.getElementById("map-canvas"),
-            mapOptions);
+    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-    var marker = new google.maps.Marker({
-        position: myLocation,
+    for (var i = 0; i < geo.length; i++) {
+      console.log(geo[i].location[0])
+      console.log(geo[i].location[1])
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(geo[i].location[1], geo[i].location[0]),
         map: map,
-        title:"you are here"
+        title:"You Are Here"
+      });
+    }
+    var infowindow = new google.maps.InfoWindow({
+      content: "You Are Here"
     });
 
-    var infowindow = new google.maps.InfoWindow({
-        content: "You Are Here"
-    });
+    var myMarker = new google.maps.Marker({
+      position: myLocation,
+      map: map,
+      title: "You Are Here"
+    })
 
     google.maps.event.addListener(marker, 'click', function() {
     infowindow.open(map,marker);
-    });
-
+    }); 
   }
+  //put my geojson data in a hidden field. on view
+  // on js grab the data from the geojson field, send it into the marker stuff
+  // $.Ajax
+
   google.maps.event.addDomListener(window, 'load', getLocation() );
+
+
+  
+
+
 }
 
 

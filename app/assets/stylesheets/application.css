@@ -34,9 +34,30 @@ body{
   border: 1px solid black;
 }*/
 
+input#food_truck.name.string.optional{
+  width: 50px;
+}
+
+.imageborder{
+  border:1px solid black;
+}
+
+.prightcompany{
+  padding-right: 15px;
+}
+
+.pleftcompany{
+  padding-left: 15px;
+}
+
 .pheadleft{
   position:relative;
+  color:#33CC33;
   
+}
+
+.companyname{
+  color:red;
 }
 
 .companyindex{
@@ -59,7 +80,7 @@ body{
   width:33.3333%;
     height:calc(100% - 0);
     position:absolute;
-    right:16px;
+    right:0px;
     top:50px;
     bottom:0;
     overflow:hidden;
@@ -320,3 +341,5 @@ body{
     bottom:0;
     overflow:hidden;
 }
+
+
