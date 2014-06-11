@@ -11,10 +11,8 @@ class FoodTrucksController < ApplicationController
       @geojson << {
         location: 
          [food_truck.longitude, food_truck.latitude], 
-        properties: {
-          name: food_truck.name,
-          address: food_truck.address,
-        }
+        properties: 
+          [food_truck.name, food_truck.address] 
       }
 
     end

@@ -75,40 +75,44 @@ var when_page_is_ready = function(){
 
     var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
+    var infowindow = new google.maps.InfoWindow({
+      maxWidth: 150
+    });
+
+
     for (var i = 0; i < geo.length; i++) {
       console.log(geo[i].location[0])
       console.log(geo[i].location[1])
       var marker = new google.maps.Marker({
         position: new google.maps.LatLng(geo[i].location[1], geo[i].location[0]),
         map: map,
-        title:"You Are Here"
+        title: (geo[i].properties[0])
       });
-    }
-    var infowindow = new google.maps.InfoWindow({
-      content: "You Are Here"
-    });
 
+      var name = geo[i].properties[0];
+      var address = geo[i].properties[1];
+      var content = name + "<br>" + address;
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i){
+
+          return function(){
+            infowindow.setContent(content);
+            infowindow.open(map, marker);
+          }
+      })(marker, i)); 
+    }
+    
     var myMarker = new google.maps.Marker({
       position: myLocation,
       map: map,
+      icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
       title: "You Are Here"
     })
-
-    google.maps.event.addListener(marker, 'click', function() {
-    infowindow.open(map,marker);
-    }); 
-  }
-  //put my geojson data in a hidden field. on view
-  // on js grab the data from the geojson field, send it into the marker stuff
-  // $.Ajax
+  }  
 
   google.maps.event.addDomListener(window, 'load', getLocation() );
-
-
-  
-
-
 }
+
 
 
 

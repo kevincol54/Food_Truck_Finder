@@ -41,12 +41,16 @@
       - @food_truck.each do |foodtruck|
         .panel.panel-info.show
           .panel-heading
-            = link_to foodtruck.name, company_food_truck_path(foodtruck.company, foodtruck)
-            .pheadleft
-              = "Now Serving Food!"   
-          = image_tag foodtruck.image.url, style: "width: 150px; height: 150px"
+            .row
+              .col-md-4
+                = link_to foodtruck.name, company_food_truck_path(foodtruck.company, foodtruck)
+              .col-md-4
+              .col-md-4
+                .pheadleft
+                  = "Now Serving Food!"   
+          = image_tag foodtruck.image.url, style: "width: 100px; height: 100px"
           = foodtruck.description
-        %hr
+          
           
     .col-xs-4
       
