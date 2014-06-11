@@ -4,7 +4,12 @@ Rails.application.routes.draw do
   get '/food_trucks' => 'food_trucks#index' 
   
   resources :companies do
-    resources :food_trucks, except: :index
+    resources :food_trucks, except: :index do
+      member do
+        patch :closed
+        patch :serving
+      end
+    end
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

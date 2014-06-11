@@ -83,23 +83,22 @@ var when_page_is_ready = function(){
     for (var i = 0; i < geo.length; i++) {
       console.log(geo[i].location[0])
       console.log(geo[i].location[1])
-      var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(geo[i].location[1], geo[i].location[0]),
-        map: map,
-        title: (geo[i].properties[0])
-      });
-
       var name = geo[i].properties[0];
       var address = geo[i].properties[1];
       var content = name + "<br>" + address;
 
-      google.maps.event.addListener(marker, 'click', (function(marker, i){
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(geo[i].location[1], geo[i].location[0]),
+        map: map,
+        title: (geo[i].properties[0]),
+        html: content
+      });
 
-          return function(){
-            infowindow.setContent(content);
-            infowindow.open(map, marker);
-          }
-      })(marker, i)); 
+      
+      google.maps.event.addListener(marker, 'click', function(){
+          infowindow.setContent(this.html);
+          infowindow.open(map, this);
+      }); 
     }
     
     var myMarker = new google.maps.Marker({

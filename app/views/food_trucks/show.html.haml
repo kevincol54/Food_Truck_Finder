@@ -34,22 +34,7 @@
             %button.btn.btn-default.pull-right{:type => "submit"}
               %i.glyphicon.glyphicon-search
             %input.form-control.pull-left{:placeholder => "Search", :type => "text"}
-
-
-.container
-  .row
-    .col-md-4
-    .col-md-4
-      .panel.panel-info
-        .panel-heading
-          %h3 #{@food_truck.name}
-            
-          %h5 #{@food_truck.description}
-          .pheadleft
-            = "Now Serving Food!"
-      .imageborder
-        = image_tag @food_truck.image.url, style: "width: 360px; height: 360px"
-    .col-md-4
+= render 'show'
 
       
     

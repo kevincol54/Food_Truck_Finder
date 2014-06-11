@@ -4,7 +4,7 @@ class FoodTrucksController < ApplicationController
   before_filter :find_food_truck, only: [:show, :edit, :update, :destroy]
 
   def index
-    @food_truck = FoodTruck.all
+    @food_truck = FoodTruck.serving
     @geojson = Array.new
 
     @food_truck.each do |food_truck|

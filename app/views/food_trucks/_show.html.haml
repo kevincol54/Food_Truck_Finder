@@ -1,0 +1,18 @@
+.container
+  .row
+    .col-md-4
+    .col-md-4
+      .panel.panel-info
+        .panel-heading
+          %h3 #{@food_truck.name}
+            
+          %h5 #{@food_truck.description}
+          .pheadleft
+            = "Now Serving Food!"
+      .imageborder
+        = image_tag @food_truck.image.url, style: "width: 358px; height: 354px; border: 1px solid black; border-radius: 20px"
+      %br
+      %button.btn.btn-danger.btn-lg.btn-block{:type => "button"} Closed
+      //have a jQuery click event on this button and inside the click event there will be an ajax call to change the numeric value on the db and then rerender the page
+      %br
+    .col-md-4

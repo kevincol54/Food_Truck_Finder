@@ -38,9 +38,10 @@ input#food_truck.name.string.optional{
   width: 50px;
 }
 
-.imageborder{
+/*.imageborder{
   border:1px solid black;
-}
+  border-radius: 
+}*/
 
 .prightcompany{
   padding-right: 15px;
