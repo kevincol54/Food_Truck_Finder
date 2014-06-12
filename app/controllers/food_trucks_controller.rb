@@ -49,6 +49,20 @@ class FoodTrucksController < ApplicationController
     redirect_to company_food_truck_path(@company, @food_truck)
   end
 
+  def closed
+    @food_truck.closed!
+    respond_to do |format|
+      format.json
+    end
+  end
+
+  def serving
+    @food_truck.serving!
+    respond_to do |format|
+      format.json
+    end
+  end
+
   def destroy
   end
 

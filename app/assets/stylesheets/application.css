@@ -34,8 +34,16 @@ body{
   border: 1px solid black;
 }*/
 
-input#food_truck.name.string.optional{
-  width: 50px;
+input#food_truck_name.string.optional{
+  width: 350px;
+}
+
+input#food_truck_description.string.optional{
+  width: 350px;
+}
+
+input#food_truck_address.string.optional{
+  width: 350px;
 }
 
 /*.imageborder{
