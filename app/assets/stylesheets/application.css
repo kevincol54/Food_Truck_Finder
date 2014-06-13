@@ -30,9 +30,11 @@ body{
     padding-top:50px; /*padding for navbar*/
 }
 
-/*.companyimage{
-  border: 1px solid black;
-}*/
+
+.thistruck{
+  margin-top: 10%;
+}
+
 .panel-heading{
   font-size: 20px;
 }
@@ -237,8 +239,8 @@ a,a:hover {
 }
 
 .navbar-bright {
-  background-color: rgb(217, 237, 247);
-  color:#CC0000;
+  background-color: #1E90FF;
+  color:#696969;
   margin-bottom: 0;
   border-width: 0;
 }

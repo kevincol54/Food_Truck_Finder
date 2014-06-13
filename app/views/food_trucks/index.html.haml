@@ -42,9 +42,16 @@
                   - if foodtruck.status == "serving"
                     = "Now Serving Food!"
                   -else 
-                    = "We Are Closed!"  
-          = image_tag foodtruck.image.url, style: "width: 100px; height: 100px"
-          = foodtruck.description
+                    = "We Are Closed!"
+          .row
+            .col-md-8
+              = image_tag foodtruck.image.url, style: "width: 100px; height: 100px; border: 1px solid #D9EDF7"
+              = foodtruck.description
+            .col-md-4
+              .thistruck
+                =link_to "Like", "javascript:void(0);", class: "like button btn btn-primary btn-lg btn-block" 
+          
+          
           
           
     .col-xs-4
