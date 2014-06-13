@@ -42,7 +42,11 @@
             .panel-heading
               = link_to foodtruck.name, company_food_truck_path(@company, foodtruck)
               .pheadleft
-                = "Now Serving Food!"   
+                - if foodtruck.status == "serving"
+                  = "Now Serving Food!"
+                -else
+                  .weareclosed 
+                    = "We Are Closed!"  
             = image_tag foodtruck.image.url, style: "width: 150px; height: 150px"
             = foodtruck.description
           %hr

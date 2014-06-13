@@ -33,6 +33,22 @@ body{
 /*.companyimage{
   border: 1px solid black;
 }*/
+.panel-heading{
+  font-size: 20px;
+}
+
+.weareclosed{
+  color: red;
+  font-size: 25px;
+}
+
+input#company_name.string.optional{
+  width: 350px;
+}
+
+textarea#company_description.text.optional{
+  width: 350px; 
+}
 
 input#food_truck_name.string.optional{
   width: 350px;
@@ -60,7 +76,7 @@ input#food_truck_address.string.optional{
 }
 
 .pheadleft{
-  position:relative;
+  font-size: 25px;
   color:#33CC33;
   
 }
@@ -221,7 +237,7 @@ a,a:hover {
 }
 
 .navbar-bright {
-  background-color:#000099;
+  background-color: rgb(217, 237, 247);
   color:#CC0000;
   margin-bottom: 0;
   border-width: 0;

@@ -1,6 +1,4 @@
-%h1 new
 %link{:href => "//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css", :rel => "stylesheet"}/
-/ begin template
 %header.navbar.navbar-bright.navbar-fixed-top{:role => "banner"}
   .container
     .navbar-header
@@ -14,8 +12,6 @@
       %ul.nav.navbar-nav
         %li
           =link_to "New Company", new_company_path
-        %li
-          / =link_to "Edit Company Info", edit_company_path(@company)
         %li
           =link_to "Cancel", companies_path
         %li

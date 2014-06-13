@@ -1,7 +1,5 @@
 %link{:href => "//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css", :rel => "stylesheet"}/
-/ begin template
 %header.navbar.navbar-bright.navbar-fixed-top{:role => "banner"}
-  / .container
   .navbar-header
     %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
       %span.sr-only Toggle navigation
@@ -13,8 +11,6 @@
     %ul.nav.navbar-nav
       %li
         =link_to "Edit Food Truck", edit_company_food_truck_path(@company, @food_truck)
-      %li
-        / =link_to "Edit Company Info", edit_company_path(@company)
       %li
         =link_to "Cancel", company_food_truck_path(@company, @food_truck)
       %li

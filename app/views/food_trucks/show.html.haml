@@ -1,7 +1,5 @@
 %link{:href => "//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css", :rel => "stylesheet"}/
-/ begin template
 %header.navbar.navbar-bright.navbar-fixed-top{:role => "banner"}
-  / .container
   .navbar-header
     %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
       %span.sr-only Toggle navigation
@@ -34,7 +32,9 @@
             %button.btn.btn-default.pull-right{:type => "submit"}
               %i.glyphicon.glyphicon-search
             %input.form-control.pull-left{:placeholder => "Search", :type => "text"}
-= render 'show'
+
+.foodtruckdata
+  = render 'show'
 
       
     

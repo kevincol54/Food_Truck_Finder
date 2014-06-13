@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :owners
   has_many :companies, through: :owners
+  has_many :likes
   has_many :food_trucks, through: :likes
   accepts_nested_attributes_for :companies
 

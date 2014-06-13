@@ -1,7 +1,7 @@
 class FoodTrucksController < ApplicationController
   before_action :authenticate_user!
-  before_filter :find_company, only: [:new, :create, :show, :edit, :update, :destroy]
-  before_filter :find_food_truck, only: [:show, :edit, :update, :destroy]
+  before_filter :find_company, only: [:new, :create, :show, :edit, :update, :destroy, :closed, :serving]
+  before_filter :find_food_truck, only: [:show, :edit, :update, :destroy, :closed, :serving]
 
   def index
     @food_truck = FoodTruck.serving
@@ -52,14 +52,14 @@ class FoodTrucksController < ApplicationController
   def closed
     @food_truck.closed!
     respond_to do |format|
-      format.json
+      format.js
     end
   end
 
   def serving
     @food_truck.serving!
     respond_to do |format|
-      format.json
+      format.js
     end
   end
 

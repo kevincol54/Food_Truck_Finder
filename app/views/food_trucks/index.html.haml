@@ -1,5 +1,4 @@
 %link{:href => "//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css", :rel => "stylesheet"}/
-/ begin template
 %header.navbar.navbar-bright.navbar-fixed-top{:role => "banner"}
   .container
     .navbar-header
@@ -11,12 +10,6 @@
       %a.navbar-brand{:href => "/food_trucks"} Home
     %nav.collapse.navbar-collapse{:role => "navigation"}
       %ul.nav.navbar-nav
-        %li
-          / =link_to "New Company", new_company_path
-        %li
-          / =link_to "Edit Company Info", edit_company_path(@company)
-        %li
-          / =link_to "Cancel", root_path
         %li
           - if user_signed_in? 
             = link_to('Logout', destroy_user_session_path, :method => :delete)
@@ -36,8 +29,7 @@
 #map-canvas
 #main.container-fluid
   .row
-    #left.col-xs-8
-      
+    #left.col-xs-8 
       - @food_truck.each do |foodtruck|
         .panel.panel-info.show
           .panel-heading
@@ -47,7 +39,10 @@
               .col-md-4
               .col-md-4
                 .pheadleft
-                  = "Now Serving Food!"   
+                  - if foodtruck.status == "serving"
+                    = "Now Serving Food!"
+                  -else 
+                    = "We Are Closed!"  
           = image_tag foodtruck.image.url, style: "width: 100px; height: 100px"
           = foodtruck.description
           
