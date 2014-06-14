@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140611180244) do
+ActiveRecord::Schema.define(version: 20140613175952) do
 
   create_table "companies", force: true do |t|
     t.string   "name"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20140611180244) do
     t.integer  "food_truck_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "status",        default: 0
   end
 
   create_table "owners", force: true do |t|

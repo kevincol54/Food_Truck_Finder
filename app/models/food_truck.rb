@@ -9,4 +9,8 @@ class FoodTruck < ActiveRecord::Base
   
   enum status: [:closed, :serving]
  
+
+ def current_user_likes_this_truck(current_user)
+  current_user.likes.where(food_truck_id: self.id)
+ end
 end

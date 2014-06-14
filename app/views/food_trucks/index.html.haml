@@ -49,7 +49,26 @@
               = foodtruck.description
             .col-md-4
               .thistruck
-                =link_to "Like", "javascript:void(0);", class: "like button btn btn-primary btn-lg btn-block" 
+                / - if food_truck.current_user_likes_this_truck(current_user)
+                / do stuff
+                / display unlike button
+                / - else
+                / this user doesn't like the truck yet
+                / display like button
+
+                -if foodtruck.current_user_likes_this_truck(current_user)
+                  =form_tag like_company_food_truck_path(foodtruck.company, foodtruck), method: :post, remote: true
+                  =hidden_field_tag "like[user_id]", current_user.id
+                  =hidden_field_tag "like[food_truck_id]", foodtruck.id               
+                  =submit_tag "Like", class: "like button btn btn-primary btn-lg btn-block"
+                -else
+                  =form_tag unlike_company_food_truck_path(foodtruck.company, foodtruck), method: :post, remote: true
+                  =hidden_field_tag "like[user_id]", current_user.id
+                  =hidden_field_tag "like[food_truck_id]", foodtruck.id               
+                  =submit_tag "Unlike", class: "like button btn btn-default btn-lg btn-block"
+                
+                  
+                 
           
           
           
