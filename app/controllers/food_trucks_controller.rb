@@ -1,7 +1,7 @@
 class FoodTrucksController < ApplicationController
   before_action :authenticate_user!
-  before_filter :find_company, only: [:new, :create, :show, :edit, :update, :destroy, :closed, :serving, :like]
-  before_filter :find_food_truck, only: [:show, :edit, :update, :destroy, :closed, :serving, :like]
+  before_filter :find_company, only: [:new, :create, :show, :edit, :update, :destroy, :closed, :serving, :like, :unlike]
+  before_filter :find_food_truck, only: [:show, :edit, :update, :destroy, :closed, :serving, :like, :unlike]
 
   def index
     @food_truck = FoodTruck.serving
@@ -66,6 +66,7 @@ class FoodTrucksController < ApplicationController
   def like
     p "*"*10
     @like = @food_truck.likes.create like_params
+    @like.like!
 
     respond_to do |format|
       format.js
@@ -73,6 +74,7 @@ class FoodTrucksController < ApplicationController
   end
 
   def unlike
+    @like = Like.find params[:id]
     @like.unlike!
     respond_to do |format|
       format.js

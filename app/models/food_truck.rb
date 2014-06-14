@@ -11,6 +11,8 @@ class FoodTruck < ActiveRecord::Base
  
 
  def current_user_likes_this_truck(current_user)
-  current_user.likes.where(food_truck_id: self.id)
+  p current_user.likes
+  p "*"*100
+  p current_user.likes.where(food_truck_id: self.id)
  end
 end

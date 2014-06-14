@@ -1,0 +1,35 @@
+%input{type:'hidden', value: @geojson.to_json, class: 'geojson'}
+#map-canvas
+#main.container-fluid
+  .row
+    #left.col-xs-8 
+      - @food_truck.each do |foodtruck|
+        .panel.panel-info.show
+          .panel-heading
+            .row
+              .col-md-4
+                = link_to foodtruck.name, company_food_truck_path(foodtruck.company, foodtruck)
+              .col-md-4
+              .col-md-4
+                .pheadleft
+                  - if foodtruck.status == "serving"
+                    = "Now Serving Food!"
+                  -else 
+                    = "We Are Closed!"
+          .row
+            .col-md-8
+              = image_tag foodtruck.image.url, style: "width: 100px; height: 100px; border: 1px solid #D9EDF7"
+              = foodtruck.description
+            .col-md-4
+              .thistruck
+                -if foodtruck.current_user_likes_this_truck(current_user)
+                  =form_tag like_company_food_truck_path(foodtruck.company, foodtruck), method: :post, remote: true
+                  =hidden_field_tag "like[user_id]", current_user.id
+                  =hidden_field_tag "like[food_truck_id]", foodtruck.id               
+                  =submit_tag "Like", class: "like button btn btn-primary btn-lg btn-block"
+                -else
+                  =form_tag unlike_company_food_truck_path(foodtruck.company, foodtruck), method: :post, remote: true
+                  =hidden_field_tag "like[user_id]", current_user.id
+                  =hidden_field_tag "like[food_truck_id]", foodtruck.id               
+                  =submit_tag "Unlike", class: "unlike button btn btn-default btn-lg btn-block"          
+    .col-xs-4
