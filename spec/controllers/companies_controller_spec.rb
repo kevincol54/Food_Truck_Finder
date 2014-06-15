@@ -1,14 +1,22 @@
 require 'rails_helper'
 
 RSpec.describe CompaniesController, :type => :controller do
-  login_user
+  
   let(:company) { Company.create!(name: 'kickin chicken') }
+  login_user
 
   subject { response }
-
+  # before(:each) do
+  #   subject.current_user = "fucking awesome"
+  # end
   it "should have a current_user" do
     subject.current_user.should_not be_nil
   end
+
+  # it 'should get index' do
+  #   get 'index'
+  #   response.should be_success
+  # end
 
   describe 'GET #index' do
     it 'does not break' do
