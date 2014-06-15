@@ -44,11 +44,11 @@ body{
   font-size: 25px;
 }
 
-input#company_name.string.optional{
+input#company_name.string.required{
   width: 350px;
 }
 
-textarea#company_description.text.optional{
+textarea#company_description.text.required{
   width: 350px; 
 }
 

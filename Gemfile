@@ -78,6 +78,7 @@ group :test do
   gem 'shoulda-matchers'
   gem 'selenium-webdriver', '~> 2.35.1' # to fix rspec error
   gem 'webmock'
+  gem 'rspec-legacy_formatters'
 end
 
 
