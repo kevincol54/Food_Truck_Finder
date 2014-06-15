@@ -19,6 +19,11 @@ development:
 test:
   <<: *default
   database: foodtruck_test
+  encoding: utf8
+  reconnect: false
+  username: root
+  password:
+  socket: /tmp/mysql.sock
 
 production:
   <<: *default

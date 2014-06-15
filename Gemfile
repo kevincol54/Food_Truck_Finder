@@ -43,20 +43,42 @@ gem 'spring',        group: :development
 gem 'devise'
 gem 'html2haml'
 gem 'haml-rails'
-gem 'letter_opener'
-gem 'quiet_assets'
-gem 'nested_form'
 gem 'simple_form'
 gem 'jquery-ui-rails'
 gem 'twitter-bootstrap-rails'
 gem 'cancan'
 gem 'paperclip'
 gem 'geocoder'
-gem 'mapbox-rails'
 gem 'gmaps4rails'
 gem 'twilio-ruby'
-gem 'rspec-rails'
-gem 'pry'
+
+
+group :development do
+  gem 'guard-rspec'
+end
+
+group :development, :test do
+  gem 'binding_of_caller'
+  gem 'dotenv-rails'
+  gem 'factory_girl_rails'
+  # gem 'better_errors'
+  gem 'letter_opener'
+  gem 'pry'
+  gem 'quiet_assets'
+  gem 'rspec-rails'
+  gem 'teaspoon'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'faker'
+  gem 'fuubar'
+  gem 'launchy'
+  gem 'shoulda-matchers'
+  gem 'selenium-webdriver', '~> 2.35.1' # to fix rspec error
+  gem 'webmock'
+end
 
 
 

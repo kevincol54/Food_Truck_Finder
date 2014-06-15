@@ -52,15 +52,15 @@ textarea#company_description.text.optional{
   width: 350px; 
 }
 
-input#food_truck_name.string.optional{
+input#food_truck_name.string.required{
   width: 350px;
 }
 
-input#food_truck_description.string.optional{
+input#food_truck_description.string.required{
   width: 350px;
 }
 
-input#food_truck_address.string.optional{
+input#food_truck_address.string.required{
   width: 350px;
 }
 

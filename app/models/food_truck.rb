@@ -6,13 +6,14 @@ class FoodTruck < ActiveRecord::Base
   after_validation :geocode 
   has_attached_file :image
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+  validates :name, :description, :image, :address, presence: true 
   
   enum status: [:closed, :serving]
  
 
  def current_user_likes_this_truck(current_user)
-  p current_user.likes
+  # p current_user.likes
   p "*"*100
-  p current_user.likes.where(food_truck_id: self.id)
+  current_user.likes.where(food_truck_id: self.id)
  end
 end
