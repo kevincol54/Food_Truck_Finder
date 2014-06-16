@@ -64,7 +64,9 @@ class FoodTrucksController < ApplicationController
   end
 
   def like
-    p "*"*10
+    p "*"*100
+    p 'Inside the LIKE'
+    p "*"*100
     @like = @food_truck.likes.create like_params
     @like.like!
 
@@ -74,8 +76,13 @@ class FoodTrucksController < ApplicationController
   end
 
   def unlike
-    @like = Like.find params[:id]
+    @like = current_user.likes.where(like_id: like.id)
+    p '*'*100
+    p @like
+    p 'Inside UNLIKE'
+    p '*'*100
     @like.unlike!
+
     respond_to do |format|
       format.js
     end
