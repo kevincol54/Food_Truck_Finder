@@ -18,4 +18,25 @@ class FoodTruck < ActiveRecord::Base
   p "*"*100
   current_user.likes.where(food_truck_id: self.id, status: 1)
  end
+
+ def send_message_to_user_who_likes_truck
+  @client.account.messages.create(
+    :from => '+18035724267',
+    :to => '+18034682388',
+    :body => '#{food truck name}...is now serving food. They are located at #{address}. Eat Up!'
+    )
+ end
+
+ like = Like.all 
+
+ 
+
+ # to_message = User.all.where(user.likes )
+ # if user likes a food truck & food truck status is serving, send message to user.phone_number
+  
+  p "*"*100
+  p User.last.phone_number
+
+
+
 end

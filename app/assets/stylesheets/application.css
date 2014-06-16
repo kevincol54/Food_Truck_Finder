@@ -239,14 +239,14 @@ a,a:hover {
 }
 
 .navbar-bright {
-  background-color: #1E90FF;
+  background-color: rgba(0, 145, 254, 0.6);;
   color:#696969;
   margin-bottom: 0;
   border-width: 0;
 }
 
 .navbar-bright a, .navbar-bright .navbar-brand, #masthead h4 {
-  color:#B2B2B2;
+  color:#808080;
   font-size:14px;
   text-transform: uppercase;
   letter-spacing:.08em;
