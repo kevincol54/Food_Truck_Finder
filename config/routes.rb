@@ -10,8 +10,10 @@ Rails.application.routes.draw do
         patch :serving
         get :like
         post :like
+        patch :like
         get :unlike
         post :unlike
+        patch :unlike
       end
     end
   end
