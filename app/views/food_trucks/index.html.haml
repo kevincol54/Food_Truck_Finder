@@ -24,6 +24,12 @@
               %button.btn.btn-default.pull-right{:type => "submit"}
                 %i.glyphicon.glyphicon-search
               %input.form-control.pull-left{:placeholder => "Search", :type => "text"}
-= render 'index'
+%input{type:'hidden', value: @geojson.to_json, class: 'geojson'}
+#map-canvas
+#main.container-fluid
+  .row
+    #left.col-xs-8 
+      - @food_truck.each do |foodtruck|              
+        = render 'index', foodtruck: foodtruck
       
      

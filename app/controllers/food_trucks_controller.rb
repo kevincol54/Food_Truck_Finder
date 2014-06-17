@@ -64,31 +64,18 @@ class FoodTrucksController < ApplicationController
   end
 
   def likeorunlike
-    # p "*"*100
-    # p 'Inside the LIKEORUNLIKE'
-    # p "*"*100
+   like_or_unlike = Like.all.where(user_id: current_user.id, food_truck_id: @food_truck)
 
-   # query all likes food ruck
-   # find likes of that array that habe same user id as current user.
-
-   p Like.all.where(user_id: current_user.id, food_truck_id: @food_truck)
-   bananas = Like.all.where(user_id: current_user.id, food_truck_id: @food_truck)
-
-    if bananas.length == 0
+    if like_or_unlike.length == 0
       @like = @food_truck.likes.create like_params
-    elsif bananas.first.status == "unlike" 
-      bananas.first.like!
-      respond_to do |format|
-        format.js
-      end
+    elsif like_or_unlike.first.status == "unlike" 
+      like_or_unlike.first.like!
     else
-      bananas.first.unlike!
-      respond_to do |format|
-        format.js
-      end
+      like_or_unlike.first.unlike!
     end
-
-    
+    respond_to do |format|
+      format.js
+    end   
   end
 
   def destroy

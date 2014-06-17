@@ -1,7 +1,7 @@
 %link{:href => "//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css", :rel => "stylesheet"}/
-/ begin template
+
 %header.navbar.navbar-bright.navbar-fixed-top{:role => "banner"}
-  / .container
+
   .navbar-header
     %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
       %span.sr-only Toggle navigation
@@ -31,8 +31,6 @@
             %button.btn.btn-default.pull-right{:type => "submit"}
               %i.glyphicon.glyphicon-search
             %input.form-control.pull-left{:placeholder => "Search", :type => "text"}
-
-
 #main.container-fluid
   .row
     #left.col-xs-8
@@ -55,6 +53,5 @@
         .panel.panel-success.text-center
           .panel-heading.text-center
             %h2 #{@company.name}
-          
           = image_tag @company.image.url, style: "width: 260px; height: 260px"
           %h5 #{@company.description}
