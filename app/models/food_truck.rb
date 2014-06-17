@@ -29,11 +29,13 @@ class FoodTruck < ActiveRecord::Base
 
  like = Like.all 
 
- 
+ # p User.joins(:likes)
+ p Like.joins(:food_truck => :likes).where(:like => :users)
 
  # to_message = User.all.where(user.likes )
  # if user likes a food truck & food truck status is serving, send message to user.phone_number
   
+
   p "*"*100
   p User.last.phone_number
 
