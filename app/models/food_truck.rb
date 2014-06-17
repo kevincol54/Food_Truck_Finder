@@ -26,8 +26,7 @@ class FoodTruck < ActiveRecord::Base
         :from => '+18035724267',
         :to => '+18034682388',
         :body => '#{food truck name}...is now serving food. They are located at #{address}. Eat Up!'
-        )
-    
+        )  
   end
 
 

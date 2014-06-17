@@ -1,7 +1,7 @@
 class FoodTrucksController < ApplicationController
   before_action :authenticate_user!
-  before_filter :find_company, only: [:new, :create, :show, :edit, :update, :destroy, :closed, :serving, :like, :unlike]
-  before_filter :find_food_truck, only: [:show, :edit, :update, :destroy, :closed, :serving, :like, :unlike]
+  before_filter :find_company, only: [:new, :create, :show, :edit, :update, :destroy, :closed, :serving, :likeorunlike, :unlike]
+  before_filter :find_food_truck, only: [:show, :edit, :update, :destroy, :closed, :serving, :likeorunlike, :unlike]
 
   def index
     @food_truck = FoodTruck.serving
@@ -63,29 +63,32 @@ class FoodTrucksController < ApplicationController
     end
   end
 
-  def like
+  def likeorunlike
     p "*"*100
-    p 'Inside the LIKE'
+    p 'Inside the LIKEORUNLIKE'
     p "*"*100
-    @like = @food_truck.likes.create like_params
-    @like.like!
 
-    respond_to do |format|
-      format.js
+   # query all likes food ruck
+   # find likes of that array that habe same user id as current user.
+
+   p Like.all.where(user_id: current_user.id, food_truck_id: @food_truck)
+   bananas = Like.all.where(user_id: current_user.id, food_truck_id: @food_truck)
+
+    if bananas.length == 0
+      @like = @food_truck.likes.create like_params
+    elsif bananas.first.status == "unlike" 
+      bananas.first.like!
+      respond_to do |format|
+        format.js
+      end
+    else
+      bananas.first.unlike!
+      respond_to do |format|
+        format.js
+      end
     end
-  end
 
-  def unlike
-    @like = current_user.likes.where(like_id: like.id)
-    p '*'*100
-    p @like
-    p 'Inside UNLIKE'
-    p '*'*100
-    @like.unlike!
-
-    respond_to do |format|
-      format.js
-    end
+    
   end
 
   def destroy
