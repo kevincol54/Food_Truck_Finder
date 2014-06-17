@@ -8,12 +8,9 @@ Rails.application.routes.draw do
       member do
         patch :closed
         patch :serving
-        get :like
-        post :like
-        patch :like
-        get :unlike
-        post :unlike
-        patch :unlike
+        get :likeorunlike
+        post :likeorunlike
+        patch :likeorunlike
       end
     end
   end

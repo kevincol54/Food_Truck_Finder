@@ -16,9 +16,10 @@
       .imageborder
         = image_tag @food_truck.image.url, style: "width: 358px; height: 354px; border: 1px solid black; border-radius: 20px"
       %br
-      -if @food_truck.status == "closed"
-        =link_to "Start Serving", "javascript:void(0);", class: "serving openclosed button btn btn-success btn-lg btn-block", foodtruck_url: serving_company_food_truck_path(@company, @food_truck)
-      -else 
-        =link_to "Close Up Shop", "javascript:void(0);", class: "closed openclosed button btn btn-danger btn-lg btn-block", foodtruck_url: closed_company_food_truck_path(@company, @food_truck)
+      -if can? :manage, FoodTruck  
+        -if @food_truck.status == "closed"
+          =link_to "Start Serving", "javascript:void(0);", class: "serving openclosed button btn btn-success btn-lg btn-block", foodtruck_url: serving_company_food_truck_path(@company, @food_truck)
+        -else 
+          =link_to "Close Up Shop", "javascript:void(0);", class: "closed openclosed button btn btn-danger btn-lg btn-block", foodtruck_url: closed_company_food_truck_path(@company, @food_truck)
       %br
     .col-md-4
