@@ -20,22 +20,21 @@ class FoodTruck < ActiveRecord::Base
  end
 
   def send_message_to_user_who_likes_truck
-    @users = self.likes.map(&:user) 
+    users = self.likes.map(&:user) 
     p "*"*100
-    # p users
+    p users
 
-    # if User.all.map(&:likes) && User.likes()     
-    #   CLIENT.account.messages.create(
-    #     :from => '+18035724267',
-    #     :to => '+18034682388',
-    #     :body => '#{self.name}...is now serving food. They are located at #{self.address}. Eat Up!'
-    #     )
-    # end
+         
+      CLIENT.account.messages.create(
+        :from => '+18035724267',
+        :to => '+18034682388',
+        :body => '#{self.name}...is now serving food. They are located at #{self.address}. Eat Up!'
+        )
+    
+    p "*"*100
+    
   end
- p "*"*100
- p @users
-
- p self 
+ 
 
  # like = Like.all 
 
