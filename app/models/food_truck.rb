@@ -15,21 +15,27 @@ class FoodTruck < ActiveRecord::Base
   # p current_user.likes
   # p likes
   # p current_user.likes[0][:status]
-  p "*"*100
+  # p "*"*100
   current_user.likes.where(food_truck_id: self.id, status: 1)
  end
 
   def send_message_to_user_who_likes_truck
-   
-    # if     
-      CLIENT.account.messages.create(
-        :from => '+18035724267',
-        :to => '+18034682388',
-        :body => '#{food truck name}...is now serving food. They are located at #{address}. Eat Up!'
-        )  
+    @users = self.likes.map(&:user) 
+    p "*"*100
+    # p users
+
+    # if User.all.map(&:likes) && User.likes()     
+    #   CLIENT.account.messages.create(
+    #     :from => '+18035724267',
+    #     :to => '+18034682388',
+    #     :body => '#{self.name}...is now serving food. They are located at #{self.address}. Eat Up!'
+    #     )
+    # end
   end
+ p "*"*100
+ p @users
 
-
+ p self 
 
  # like = Like.all 
 
@@ -39,11 +45,11 @@ class FoodTruck < ActiveRecord::Base
  # to_message = User.all.where(user.likes )
  # if user likes a food truck & food truck status is serving, send message to user.phone_number
   
- p Like.all
- p "*"*100
- p User.all.map(&:likes)
+ # p Like.all
+ # p "*"*100
+ # p User.all.map(&:likes)
 
- p "*"*100
+ # p "*"*100
   # p User.last.phone_number
 
 

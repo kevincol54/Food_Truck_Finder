@@ -64,9 +64,9 @@ class FoodTrucksController < ApplicationController
   end
 
   def likeorunlike
-    p "*"*100
-    p 'Inside the LIKEORUNLIKE'
-    p "*"*100
+    # p "*"*100
+    # p 'Inside the LIKEORUNLIKE'
+    # p "*"*100
 
    # query all likes food ruck
    # find likes of that array that habe same user id as current user.
