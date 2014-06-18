@@ -1,28 +1,19 @@
-== README
+Install Ruby V2.1.1
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Git clone this app into new directory
 
-Things you may want to cover:
+'Bundle install' to get all gems installed
 
-* Ruby version
+I am using Sequel Pro for all my database needs
 
-* System dependencies
+'rake db:create' to get database created
 
-* Configuration
+'rake db:migrate' to get database migrated with all the neccessary tables and columns
 
-* Database creation
+'rake db:seed' to prepopulate your DB with some data
 
-* Database initialization
+Start rails server
 
-* How to run the test suite
+Direct your browser to localhost:3000 (or which ever port you assign your rails server to)
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Have Fun!
