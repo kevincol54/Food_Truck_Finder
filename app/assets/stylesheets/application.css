@@ -27,9 +27,16 @@ html,body{
 }
 
 body{
-    padding-top:50px; /*padding for navbar*/
+    padding-top:50px;
 }
 
+.div#left.col-xs-8{
+  width:865px;
+}
+
+.input.unlike.button.btn.btn-default.btn-lg.btn-block{
+  padding: 5px ;
+}
 
 .thistruck{
   margin-top: 10%;
@@ -64,11 +71,6 @@ input#food_truck_address.string.required{
   width: 350px;
 }
 
-/*.imageborder{
-  border:1px solid black;
-  border-radius: 
-}*/
-
 .prightcompany{
   padding-right: 15px;
 }
@@ -79,8 +81,7 @@ input#food_truck_address.string.required{
 
 .pheadleft{
   font-size: 25px;
-  color:#33CC33;
-  
+  color:#33CC33;  
 }
 
 .companyname{

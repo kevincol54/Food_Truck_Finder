@@ -111,7 +111,6 @@ GEM
       haml (>= 4.0.0.rc.1)
       hpricot (~> 0.8.6)
       ruby_parser (~> 3.1.1)
-    htmlentities (4.3.2)
     i18n (0.6.9)
     jbuilder (2.0.7)
       activesupport (>= 3.0.0, < 5)
@@ -245,9 +244,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    tarantula (0.5.1)
-      hpricot (~> 0.8.4)
-      htmlentities (~> 4.3.0)
     teaspoon (0.8.0)
       railties (>= 3.2.5, < 5)
     thor (0.19.1)
@@ -321,7 +317,6 @@ DEPENDENCIES
   shoulda-matchers
   simple_form
   spring
-  tarantula
   teaspoon
   turbolinks
   twilio-ruby
