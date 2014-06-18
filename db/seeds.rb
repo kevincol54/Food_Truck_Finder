@@ -35,7 +35,7 @@ FoodTruck.create!(
   address: '316 Bayview Drive, Mount Pleasant, SC',
   latitude: '32.7938',
   longitude: '-79.8897',
-  status: '1'
+  status: 'serving'
   )
 
 FoodTruck.create!(
@@ -45,7 +45,7 @@ FoodTruck.create!(
   address: '85 Patriots Point Road, Mount Pleasant, SC',
   latitude: '32.7946',
   longitude: '-79.9046',
-  status: '1'
+  status: 'serving'
   )
 
 FoodTruck.create!(
@@ -55,7 +55,7 @@ FoodTruck.create!(
   address: '320 Molasses Lane, Mount Pleasant, SC',
   latitude: '32.8186',
   longitude: '-79.8886',
-  status: '1'
+  status: 'serving'
   )
 
 FoodTruck.create!(
@@ -65,7 +65,7 @@ FoodTruck.create!(
   address: '1107 Summersill Lane, Mount Pleasant, SC',
   latitude: '32.8183',
   longitude: '-79.8647',
-  status: '1'
+  status: 'serving'
   )
 
 FoodTruck.create!(
@@ -75,7 +75,7 @@ FoodTruck.create!(
   address: '709 Center Street, Mount Pleasant, SC',
   latitude: '32.784',
   longitude: '-79.8598',
-  status: '1'
+  status: 'serving'
   )
 
 FoodTruck.create!(
@@ -85,7 +85,7 @@ FoodTruck.create!(
   address: '1336 Shrimp Boat Lane, Mount Pleasant, SC',
   latitude: '32.7925',
   longitude: '-79.8829',
-  status: '0'
+  status: 'closed'
   )
 
 FoodTruck.create!(
@@ -95,7 +95,7 @@ FoodTruck.create!(
   address: '114 Live Oak Drive, Mount Pleasant, SC',
   latitude: '32.7891',
   longitude: '-79.8823',
-  status: '0'
+  status: 'closed'
   )
 
 FoodTruck.create!(
@@ -105,7 +105,7 @@ FoodTruck.create!(
   address: '748 Creekside Drive, Mount Pleasant, SC',
   latitude: '32.8025',
   longitude: '-79.8698',
-  status: '0'
+  status: 'closed'
   )
 
 #######################################################################
@@ -113,48 +113,48 @@ FoodTruck.create!(
 Like.create!(
   user_id: '1',
   food_truck_id: '1',
-  status: '1'
+  status: 'like'
   )
 
 Like.create!(
   user_id: '1',
   food_truck_id: '3',
-  status: '1'
+  status: 'like'
   )
 
 Like.create!(
   user_id: '1',
   food_truck_id: '4',
-  status: '1'
+  status: 'like'
   )
 
 Like.create!(
   user_id: '1',
   food_truck_id: '6',
-  status: '1'
+  status: 'like'
   )
 
 Like.create!(
   user_id: '1',
   food_truck_id: '7',
-  status: '1'
+  status: 'like'
   )
 
 Like.create!(
   user_id: '1',
   food_truck_id: '8',
-  status: '0'
+  status: 'unlike'
   )
 
 Like.create!(
   user_id: '1',
   food_truck_id: '5',
-  status: '0'
+  status: 'unlike'
   )
 
 Like.create!(
   user_id: '1',
   food_truck_id: '2',
-  status: '0'
+  status: 'unlike'
   )
 
