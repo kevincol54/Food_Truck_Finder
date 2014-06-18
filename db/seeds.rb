@@ -7,7 +7,7 @@ u = user.new(
   company_name: 'Good Food Inc',
   phone_number: '+12345678900'
   )
-u.save! (validate: false)
+u.save!(validate: false)
 
 u = user.new(
   email: 'foodieuser@example.com',
@@ -16,6 +16,7 @@ u = user.new(
   user_type: 'Foodie',
   phone_number: '+18034682388'
   )
+u.save!(validate: false)
 
 #############################################################
 
