@@ -1,5 +1,5 @@
 
-u = user.new(
+u = User.new(
   email: 'companyuser@example.com',
   password: 'password',
   name: 'Doug Schmidt',
@@ -9,7 +9,7 @@ u = user.new(
   )
 u.save!(validate: false)
 
-u = user.new(
+u = User.new(
   email: 'foodieuser@example.com',
   password: 'password',
   name: 'Steven Tyler',
