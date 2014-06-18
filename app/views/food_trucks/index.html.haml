@@ -47,11 +47,8 @@
               = image_tag foodtruck.image.url, style: "width: 130px; height: 100px; border: 1px solid #D9EDF7"
               = foodtruck.description
             .col-md-4
-              =form_tag likeorunlike_company_food_truck_path(foodtruck.company, foodtruck), method: :post, remote: true do
-                =hidden_field_tag "like[user_id]", current_user.id
-                =hidden_field_tag "like[food_truck_id]", foodtruck.id
-                .thistruck            
-                  = render 'index', foodtruck: foodtruck
+              .thistruck            
+                = render 'index', foodtruck: foodtruck
 
       
      

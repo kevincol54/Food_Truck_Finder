@@ -14,4 +14,13 @@ class User < ActiveRecord::Base
     "Company",
     "Foodie"
   ]
+
+
+  def send_message    
+    CLIENT.account.messages.create(
+      :from => '+18035724267',
+      :to => '+18034682388',
+      :body => '#{self.name}...is now serving food. They are located at #{self.address}. Eat Up!'
+    )    
+  end  
 end

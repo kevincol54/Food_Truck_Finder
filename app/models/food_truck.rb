@@ -7,6 +7,7 @@ class FoodTruck < ActiveRecord::Base
   has_attached_file :image
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   validates :name, :description, :image, :address, presence: true 
+  after_save :find_user_and_send_message
   
   enum status: [:closed, :serving]
  
@@ -15,18 +16,15 @@ class FoodTruck < ActiveRecord::Base
     current_user.likes.where(food_truck_id: self.id, status: 1)
   end
 
-  def send_message    
-    CLIENT.account.messages.create(
-      :from => '+18035724267',
-      :to => '+18034682388',
-      :body => '#{self.name}...is now serving food. They are located at #{self.address}. Eat Up!'
-      )    
-  end
+ 
 
-  def find_user_that_likes_truck
+  def find_user_and_send_message
     @users = self.likes.map(&:user) 
-    p "*"*100
-    #if status changed from closed to serving
-    @users.send_message
+    p "*"*100 
+    if self.status == 'serving'
+      @users.each do |user|
+        user.send_message
+      end
+    end
   end
 end

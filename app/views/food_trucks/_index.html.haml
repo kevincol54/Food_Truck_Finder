@@ -1,5 +1,8 @@
--if foodtruck.current_user_likes_this_truck(current_user).length > 0
-  =submit_tag "Unlike", class: "unlike button btn btn-default btn-lg btn-block"      
--else                           
-  =submit_tag "Like", class: "like button btn btn-primary btn-lg btn-block"       
+=form_tag likeorunlike_company_food_truck_path(foodtruck.company, foodtruck), method: :post, remote: true do
+  =hidden_field_tag "like[user_id]", current_user.id
+  =hidden_field_tag "like[food_truck_id]", foodtruck.id
+  -if foodtruck.current_user_likes_this_truck(current_user).length > 0
+    =submit_tag "Unlike", class: "unlike button btn btn-default btn-lg btn-block"      
+  -else                           
+    =submit_tag "Like", class: "like button btn btn-primary btn-lg btn-block"       
 .col-xs-4
