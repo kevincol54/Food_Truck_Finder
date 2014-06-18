@@ -50,8 +50,8 @@
               =form_tag likeorunlike_company_food_truck_path(foodtruck.company, foodtruck), method: :post, remote: true do
                 =hidden_field_tag "like[user_id]", current_user.id
                 =hidden_field_tag "like[food_truck_id]", foodtruck.id
-                .thistruck              
-                  = render 'index', foodtruck: foodtruck
+                              
+                = render 'index', foodtruck: foodtruck
 
       
      

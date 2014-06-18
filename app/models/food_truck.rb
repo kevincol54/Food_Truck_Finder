@@ -26,14 +26,7 @@ class FoodTruck < ActiveRecord::Base
   def find_user_that_likes_truck
     @users = self.likes.map(&:user) 
     p "*"*100
-    p @users
+    #if status changed from closed to serving
+    @users.send_message
   end
-  
-
- 
-
-
-
-
-
 end
