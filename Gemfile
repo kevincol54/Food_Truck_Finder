@@ -66,6 +66,7 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'rspec-rails'
   gem 'teaspoon'
+  gem 'tarantula', require: 'tarantula-rails3'
 end
 
 group :test do
