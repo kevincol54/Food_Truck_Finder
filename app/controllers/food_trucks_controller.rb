@@ -1,13 +1,14 @@
 class FoodTrucksController < ApplicationController
   before_action :authenticate_user!
-  before_filter :find_company, only: [:new, :create, :show, :edit, :update, :destroy, :closed, :serving, :likeorunlike, :unlike]
-  before_filter :find_food_truck, only: [:show, :edit, :update, :destroy, :closed, :serving, :likeorunlike, :unlike]
+  before_filter :find_company, only: [:new, :create, :show, :edit, :update, :destroy, :closed, :serving, :likeorunlike]
+  before_filter :find_food_truck, only: [:show, :edit, :update, :destroy, :closed, :serving, :likeorunlike]
 
   def index
-    @food_truck = FoodTruck.serving
+
+    @food_trucks = FoodTruck.serving
     @geojson = Array.new
 
-    @food_truck.each do |food_truck|
+    @food_trucks.each do |food_truck|
       @geojson << {
         location: 
          [food_truck.longitude, food_truck.latitude], 
@@ -64,7 +65,7 @@ class FoodTrucksController < ApplicationController
   end
 
   def likeorunlike
-   like_or_unlike = Like.all.where(user_id: current_user.id, food_truck_id: @food_truck)
+      like_or_unlike = Like.all.where(user_id: current_user.id, food_truck_id: @food_truck)
 
     if like_or_unlike.length == 0
       @like = @food_truck.likes.create like_params

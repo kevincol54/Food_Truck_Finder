@@ -11,22 +11,25 @@ class FoodTruck < ActiveRecord::Base
   enum status: [:closed, :serving]
  
 
- def current_user_likes_this_truck(current_user)
-  current_user.likes.where(food_truck_id: self.id, status: 1)
- end
+  def current_user_likes_this_truck(current_user)
+    current_user.likes.where(food_truck_id: self.id, status: 1)
+  end
 
-  def send_message_to_user_who_likes_truck
+  def send_message    
+    CLIENT.account.messages.create(
+      :from => '+18035724267',
+      :to => '+18034682388',
+      :body => '#{self.name}...is now serving food. They are located at #{self.address}. Eat Up!'
+      )    
+  end
+
+  def find_user_that_likes_truck
     @users = self.likes.map(&:user) 
     p "*"*100
     p @users
-
-         
-    # CLIENT.account.messages.create(
-    #   :from => '+18035724267',
-    #   :to => '+18034682388',
-    #   :body => '#{self.name}...is now serving food. They are located at #{self.address}. Eat Up!'
-    #   )    
   end
+  
+
  
 
 
