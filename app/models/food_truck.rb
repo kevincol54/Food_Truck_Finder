@@ -6,7 +6,7 @@ class FoodTruck < ActiveRecord::Base
   after_validation :geocode 
   has_attached_file :image
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
-  validates :name, :description, :image, :address, presence: true 
+  validates :name, :description, :address, presence: true 
   after_save :find_user_and_send_message
   
   enum status: [:closed, :serving]
