@@ -112,49 +112,49 @@ FoodTruck.create!(
 
 Like.create!(
   user_id: '1',
-  food_truck_id: '1'
+  food_truck_id: '1',
   status: '1'
   )
 
 Like.create!(
   user_id: '1',
-  food_truck_id: '3'
+  food_truck_id: '3',
   status: '1'
   )
 
 Like.create!(
   user_id: '1',
-  food_truck_id: '4'
+  food_truck_id: '4',
   status: '1'
   )
 
 Like.create!(
   user_id: '1',
-  food_truck_id: '6'
+  food_truck_id: '6',
   status: '1'
   )
 
 Like.create!(
   user_id: '1',
-  food_truck_id: '7'
+  food_truck_id: '7',
   status: '1'
   )
 
 Like.create!(
   user_id: '1',
-  food_truck_id: '8'
+  food_truck_id: '8',
   status: '0'
   )
 
 Like.create!(
   user_id: '1',
-  food_truck_id: '5'
+  food_truck_id: '5',
   status: '0'
   )
 
 Like.create!(
   user_id: '1',
-  food_truck_id: '2'
+  food_truck_id: '2',
   status: '0'
   )
 
