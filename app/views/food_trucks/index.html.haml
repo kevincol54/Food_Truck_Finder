@@ -47,7 +47,7 @@
               = image_tag foodtruck.image.url, style: "width: 130px; height: 100px; border: 1px solid #D9EDF7"
               = foodtruck.description
             .col-md-4
-              .thistruck            
+              .thistruck{ class: "foodtruck_#{foodtruck.id}"  }            
                 = render 'index', foodtruck: foodtruck
 
       
