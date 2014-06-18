@@ -61,7 +61,6 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'dotenv-rails'
   gem 'factory_girl_rails'
-  # gem 'better_errors'
   gem 'letter_opener'
   gem 'pry'
   gem 'quiet_assets'
@@ -76,7 +75,7 @@ group :test do
   gem 'fuubar'
   gem 'launchy'
   gem 'shoulda-matchers'
-  gem 'selenium-webdriver', '~> 2.35.1' # to fix rspec error
+  gem 'selenium-webdriver', '~> 2.35.1'
   gem 'webmock'
   gem 'rspec-legacy_formatters'
 end

@@ -21,7 +21,7 @@ u = user.new(
   password: 'password',
   name: 'Steven Tyler',
   user_type: 'Foodie',
-  phone_number: '+12345678900'
+  phone_number: '+18034682388'
   )
 
 #############################################################
