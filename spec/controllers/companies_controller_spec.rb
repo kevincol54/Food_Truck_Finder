@@ -6,9 +6,7 @@ RSpec.describe CompaniesController, :type => :controller do
   login_user
 
   subject { response }
-  # before(:each) do
-  #   subject.current_user = "fucking awesome"
-  # end
+
   it "should have a current_user" do
     subject.current_user.should_not be_nil
   end

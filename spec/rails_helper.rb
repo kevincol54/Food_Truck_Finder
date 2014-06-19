@@ -27,6 +27,7 @@ RSpec.configure do |config|
   config.include ControllerHelpers, type: :controller
   config.include Devise::TestHelpers, :type => :controller
   config.extend ControllerMacros, :type => :controller
+  config.include Spider
 
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
