@@ -81,5 +81,5 @@ group :test do
   gem 'rspec-legacy_formatters'
 end
 
-
+ruby '2.0.0'
 
