@@ -52,6 +52,7 @@ gem 'geocoder'
 gem 'gmaps4rails'
 gem 'twilio-ruby'
 gem "paperclip-dropbox", ">= 1.1.7"
+gem 'figaro'
 
 
 group :development do
@@ -81,5 +82,5 @@ group :test do
   gem 'rspec-legacy_formatters'
 end
 
-ruby '2.0.0'
+
 
