@@ -17,12 +17,6 @@ class FoodTruck < ActiveRecord::Base
   after_save :find_user_and_send_message
   
   enum status: [:closed, :serving]
-  p 'hey kevin'
-  p  ENV['APP_KEY']
-  p ENV['APP_SECRET']
-  p ENV['ACCESS_TOKEN']
-  p ENV['ACCESS_TOKEN_SECRET']
-  p ENV['USER_ID']
 
 
 

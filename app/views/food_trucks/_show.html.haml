@@ -22,6 +22,7 @@
         -else 
           =link_to "Close Up Shop", "javascript:void(0);", class: "closed openclosed button btn btn-danger btn-lg btn-block", foodtruck_url: closed_company_food_truck_path(@company, @food_truck)
       %br
-      =link_to "Change Location", edit_company_food_truck_path(@company, @food_truck), class: "button btn btn-primary btn-lg btn-block"
+      -if can? :manage, FoodTruck
+        =link_to "Change Location", edit_company_food_truck_path(@company, @food_truck), class: "button btn btn-primary btn-lg btn-block"
       %br
     .col-md-4
