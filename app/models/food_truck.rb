@@ -4,7 +4,9 @@ class FoodTruck < ActiveRecord::Base
   has_many :users, through: :likes
   geocoded_by :address
   after_validation :geocode 
-  has_attached_file :image
+  has_attached_file :image,
+    :storage => :dropbox,
+    :dropbox_credentials => Rails.root.join("config/dropbox.yml")
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   validates :name, :description, :address, presence: true 
   after_save :find_user_and_send_message

@@ -51,6 +51,7 @@ gem 'paperclip'
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'twilio-ruby'
+gem "paperclip-dropbox", ">= 1.1.7"
 
 
 group :development do

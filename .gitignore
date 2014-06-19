@@ -16,3 +16,4 @@
 /tmp
 
 /config/initializers/twilio_credentials.rb
+/config/dropbox.yml
