@@ -27,9 +27,9 @@ class FoodTruck < ActiveRecord::Base
  
 
   def find_user_and_send_message
-    @users = self.likes.map(&:user) 
+    @users = self.likes.map(&:user)
     if self.status_changed? && self.status == 'serving'
-      @users.each do |user|
+      @users.each do |user| 
         user.send_message(self)
       end
     end
