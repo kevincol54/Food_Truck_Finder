@@ -1,19 +1,41 @@
-Install Ruby V2.1.1
+==About
 
-Git clone this app into new directory
+This was my final project for my 12 week course at The Iron Yard. I used a variety of technologies to build this app. It geolocates a user, finds food trucks that are around them and shows them on a map. Additionally, if a user 'likes' a food truck, once the food truck's status goes from 'closed' to 'serving' it will send the user a text message letting them know the truck is now open and where it is located.
 
-'Bundle install' to get all gems installed
 
-I am using Sequel Pro for all my database needs
+==Technologies Incorporated
 
-'rake db:create' to get database created
+*Ruby/Rails
+*Javascript
+*AJAX
+*jQuery
+*Twilio API
+*Google Maps API
+*Dropbox API
+*Geolocation
+*Rspec Unit & Integration Tests
+*Enum State machine
+*Twitter Bootstrap
 
-'rake db:migrate' to get database migrated with all the neccessary tables and columns
 
-'rake db:seed' to prepopulate your DB with some data
+==Installation
 
-Start rails server
+*Install Ruby V2.1.1
 
-Direct your browser to localhost:3000 (or which ever port you assign your rails server to)
+*Git clone this app into new directory
 
-Have Fun!
+*'Bundle install' to get all gems installed
+
+*I am using Sequel Pro for all my database needs
+
+*'rake db:create' to get database created
+
+*'rake db:migrate' to get database migrated with all the neccessary tables and columns
+
+*'rake db:seed' to prepopulate your DB with some data
+
+*Start rails server
+
+*Direct your browser to localhost:3000 (or which ever port you assign your rails server to)
+
+*Have Fun!
