@@ -6,15 +6,25 @@ This was my final project for my 12 week course at The Iron Yard. I used a varie
 ==Technologies Incorporated
 
 *Ruby/Rails
+
 *Javascript
+
 *AJAX
+
 *jQuery
+
 *Twilio API
+
 *Google Maps API
+
 *Dropbox API
+
 *Geolocation
+
 *Rspec Unit & Integration Tests
+
 *Enum State machine
+
 *Twitter Bootstrap
 
 
