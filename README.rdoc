@@ -5,47 +5,47 @@ This was my final project for my 12 week course at The Iron Yard. I used a varie
 
 ==Technologies Incorporated
 
-*Ruby/Rails
+* Ruby/Rails
 
-*Javascript
+* Javascript
 
-*AJAX
+* AJAX
 
-*jQuery
+* jQuery
 
-*Twilio API
+* Twilio API
 
-*Google Maps API
+* Google Maps API
 
-*Dropbox API
+* Dropbox API
 
-*Geolocation
+* Geolocation
 
-*Rspec Unit & Integration Tests
+* Rspec Unit & Integration Tests
 
-*Enum State machine
+* Enum State machine
 
-*Twitter Bootstrap
+* Twitter Bootstrap
 
 
 ==Installation
 
-*Install Ruby V2.1.1
+* Install Ruby V2.1.1
 
-*Git clone this app into new directory
+* Git clone this app into new directory
+ 
+* 'Bundle install' to get all gems installed
 
-*'Bundle install' to get all gems installed
+* I am using Sequel Pro for all my database needs
 
-*I am using Sequel Pro for all my database needs
+* 'rake db:create' to get database created
 
-*'rake db:create' to get database created
+* 'rake db:migrate' to get database migrated with all the neccessary tables and columns
 
-*'rake db:migrate' to get database migrated with all the neccessary tables and columns
+* 'rake db:seed' to prepopulate your DB with some data
 
-*'rake db:seed' to prepopulate your DB with some data
+* Start rails server
 
-*Start rails server
+* Direct your browser to localhost:3000 (or which ever port you assign your rails server to)
 
-*Direct your browser to localhost:3000 (or which ever port you assign your rails server to)
-
-*Have Fun!
+* Have Fun!
