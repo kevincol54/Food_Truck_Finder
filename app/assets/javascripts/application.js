@@ -65,7 +65,7 @@ var when_page_is_ready = function(){
       var lng =  position.coords.longitude;
 
       var myLocation = new google.maps.LatLng(lat, lng);
-      console.log("FUCK:", myLocation )
+      console.log("maybe", myLocation )
 
       var mapOptions = {
         center: new google.maps.LatLng(myLocation.lat(),myLocation.lng()),
